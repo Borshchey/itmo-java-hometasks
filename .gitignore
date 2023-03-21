@@ -3,3 +3,5 @@
 .idea
 *.iml
 .DS_Store
+/itmo-java-hometasks.iml
+src/lesson02/Lesson02.java
