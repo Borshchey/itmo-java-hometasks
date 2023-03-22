@@ -23,11 +23,12 @@ public class Task4 {
             System.out.println("sent '0' if your answer is 'no', and '1' if 'yes'");
             int userNumber = in.nextInt();
 
+            loop01:
                     while (low < high) {
 
                         if (userNumber == 1) {
                             System.out.println("win");
-                            break;
+                            break loop01;
                         }
                         else if (userNumber == 0) {
                             System.out.println("is it more?");
