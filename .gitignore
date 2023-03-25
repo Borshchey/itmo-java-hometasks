@@ -4,4 +4,6 @@
 *.iml
 .DS_Store
 /itmo-java-hometasks.iml
-src/lesson02/Lesson02.java
+src/lesson02/
+/src/lesson05/
+/src/lesson04/
