@@ -21,16 +21,24 @@ public class Task6 {
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) count++;
         }
-
         int[] newArray = new int[count];
-        for (int j = 0; j < count; j++) {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] < 0) {
-                    newArray[j] = array[i];
-                    array[i] = 0;
-                    break;}
+        int j = 0;
+        for (int number : array) {
+            if (number < 0) {
+                newArray[j] = number;
+                j++;
             }
         }
-        System.out.println(Arrays.toString(newArray));
+
+//        for (int j = 0; j < count; j++) {
+//            for (int i = 0; i < array.length; i++) {
+//                if (array[i] < 0) {
+//                    newArray[j] = array[i];
+//                    array[i] = 0;
+//                    break;}
+//            }
+//        }
+            System.out.println(Arrays.toString(newArray));
+        }
     }
-}
+

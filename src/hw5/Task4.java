@@ -17,7 +17,7 @@ public class Task4 {
 
         String[] array = new String[10];
         String input;
-        Boolean skip;
+        boolean skip;
 
         while (true) {
              for (int i = 0; i < array.length; i++) {
@@ -29,6 +29,7 @@ public class Task4 {
                      if (word == null) continue;
                      if (word.equals(input)) {
                          skip = true;
+                         i--;
                      break;}
                  }
                  if (!skip) array[i] = input;
