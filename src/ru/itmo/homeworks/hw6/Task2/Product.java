@@ -17,8 +17,7 @@ public class Product {
     }
 
     public Product(String productName){
-        getCalorie();
-        getFat();
+        setProductName(productName);
     }
 
     public Product(int fat, int carbohydrate, int protein){

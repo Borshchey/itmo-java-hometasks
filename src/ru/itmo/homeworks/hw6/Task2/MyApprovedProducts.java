@@ -1,7 +1,6 @@
 package ru.itmo.homeworks.hw6.Task2;
 
 import ru.itmo.homeworks.hw6.Task1.Climber;
-
 import java.util.Arrays;
 
 public class MyApprovedProducts {
@@ -22,10 +21,13 @@ public class MyApprovedProducts {
     private int maxCarbohydrateCount;
     private int maxCaloriesCount;
     private Product[] productsList;
-    private boolean isProductAdded;
+    private int index; // счетчик продуктов
+    private int len = 10; // длина массива
 
-    public boolean isProductAdded() {
-        return isProductAdded;
+    private int i = 0; //счетчик имен
+
+    public MyApprovedProducts(){
+        productsList = new Product[10];
     }
 
     public void setMaxProteinsCount(int maxProteinsCount) {
@@ -53,33 +55,49 @@ public class MyApprovedProducts {
     public int getMaxCarbohydrateCount() {return maxCarbohydrateCount;}
     public int getMaxCaloriesCount() {return maxCaloriesCount;}
 
-    public String addProductToList(boolean isProductAdded, Product product) {
-        if (isProductAdded == true) {
-            throw new IllegalArgumentException("Такой продукт уже есть в списке");
-        } else if ((product.getCalorie() > maxCaloriesCount) || (product.getCarbohydrate() > maxCarbohydrateCount) || (product.getFat() > maxFatsCount) || (product.getProtein() > maxProteinsCount))
-        {
-            throw new IllegalArgumentException("Превышены лимиты по характеристикам продукта");
+    public void addProductToList(Product product) {
+        if (product == null) {
+            System.out.println("Не может быть пустой продукт");
+            return;
         }
-        else {
-                for (int i = 0; i < productsList.length; i++) {
-                    for (Product example : productsList) {
-                        if (example == null) {
-                            example.setProductName(product.getProductName());
-                            break;
-                        }
-                    }
-                }
-            return ("Продукт добавлен");
+        if (product.getCalorie() > maxCaloriesCount) {
+            System.out.println("Слишком много калорий");
+            return;
+        }
+        if (product.getCarbohydrate() > maxCarbohydrateCount) {
+            System.out.println("Слишком много углеводов");
+            return;
+        }
+        if (product.getFat() > maxFatsCount) {
+            System.out.println("Слишком много жиров");
+            return;
+        }
+        if (product.getProtein() > maxProteinsCount) {
+            System.out.println("Слишком много протеинов");
+            return;}
+
+        if (index < len) {
+            productsList[index] = product;
+            index++;
+        } else {
+            System.out.println("В массиве нет места");
         }
     }
 
     public void getAllProductsNames(Product[] productsList) {
         String[] productsNamesList = new String[productsList.length];
-        int i = 0;
         for (Product product : productsList) {
-            if (i > productsList.length) {break;}
+            if (i > index) {
+                System.out.println("список заполнен");
+                return;
+            }
+            if (product == null) {
+                System.out.println("Пустой продукт");
+                return;
+            }
             productsNamesList[i] = product.getProductName();
             i++;
+            break;
             }
         System.out.println(Arrays.toString(productsNamesList));
         }

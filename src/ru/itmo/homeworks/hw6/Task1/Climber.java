@@ -2,10 +2,16 @@ package ru.itmo.homeworks.hw6.Task1;
 
 public class Climber {
 
-    //Альпинист создаётся с именем (не менее 3 символов) и адресом проживания (не менее 5 символов).
+    //Альпинист создаётся с именем (не менее 3 символов)
+    // и адресом проживания (не менее 5 символов).
 
     private String name;
     private String address;
+
+    public Climber(String name, String address){
+        setName(name);
+        setAddress(address);
+    }
 
     public void setName(String name) {
         if (name == null || name.length() < 3) {

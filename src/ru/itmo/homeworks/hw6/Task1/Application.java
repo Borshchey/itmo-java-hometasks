@@ -12,30 +12,27 @@ public class Application {
         Group group02 = new Group();
         Group group03 = new Group();
 
-        group01.setGroupOpen(true);
-        group02.setGroupOpen(true);
-        group03.setGroupOpen(true);
-
         Mountain mountain01 = new Mountain();
         Mountain mountain02 = new Mountain();
         Mountain mountain03 = new Mountain();
+
+        Climber climber01 = new Climber("Ted", "NY123");
+        Climber climber02 = new Climber("Sara","Msk123");
+        Climber climber03 = new Climber("Joh", "Spb123");
 
         group01.setLength(3);
         group01.setMountain(mountain01);
         group02.setMountain(mountain02);
         group03.setMountain(mountain03);
 
-        boolean check = group01.getIsGroupOpen();
-        group01.addClimberToGroup(check, "Ted", "Mosby");
-        group01.addClimberToGroup(check, "Joh", "Dow");
-        group01.addClimberToGroup(check, "Sara", "Smith");
+        group01.addClimberToGroup(climber01);
+        group01.addClimberToGroup(climber02);
+        group01.addClimberToGroup(climber03);
 
-        check = group02.getIsGroupOpen();
-        group02.addClimberToGroup(check, "Ted", "Mosby");
-        group02.addClimberToGroup(check, "Joh", "Dow");
+        group02.addClimberToGroup(climber01);
+        group02.addClimberToGroup(climber02);
 
-        check = group03.getIsGroupOpen();
-        group03.addClimberToGroup(check, "Ted", "Mosby");
-        group03.addClimberToGroup(check, "Sara", "Smith");
+        group03.addClimberToGroup(climber01);
+        group03.addClimberToGroup(climber02);
     }
 }

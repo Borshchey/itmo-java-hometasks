@@ -8,37 +8,32 @@ public class Group {
     //гора;
     //должна быть возможность добавить альпиниста в группу (в массив), если набор ещё идёт'
 
-    private boolean isGroupOpen;
     private Climber[] climbers;
     private Mountain mountain;
-    private int length;
+    private int length = 10;
+
+    public Group(){
+        climbers = new Climber[10];
+    }
+    private int index; // счетчик альпинистов
 
     public void setLength(int length) {
         this.length = length;
     }
-    public void setGroupOpen(boolean isGroupOpen) {
-        this.isGroupOpen = isGroupOpen;
-    }
     public void setMountain(Mountain mountain) {
         this.mountain = mountain;
     }
-    public boolean getIsGroupOpen() {
-        return isGroupOpen;
-    }
-    public String addClimberToGroup(boolean isGroupOpen, String climberName, String climberAddress) {
-        if (isGroupOpen == false) {
-            return ("Набор в группу закрыт");
+
+    public void addClimberToGroup(Climber climber) {
+        if (climber == null) {
+            System.out.println("Не может быть пустого альпиниста!");
+            return;
+        }
+        if (index < climbers.length) {
+            climbers[index] = climber;
+            index++;
         } else {
-                for (int i = 0; i < length; i++) {
-                    for (Climber person : climbers) {
-                        if (person == null) {
-                            person.setName(climberName);
-                            person.setAddress(climberAddress);
-                            break;
-                        }
-                    }
-                }
-            return ("Альпинист успешно добавлен");
+            System.out.println("Набор в группу закрыт");
         }
     }
 }

@@ -19,5 +19,7 @@ public class Application {
         Product product04 = new Product(calorie);
 
         MyApprovedProducts test = new MyApprovedProducts();
+        test.addProductToList(product02);
+        test.getAllProductsNames(test.getProductsList());
     }
 }
