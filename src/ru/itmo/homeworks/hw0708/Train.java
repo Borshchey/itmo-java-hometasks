@@ -3,6 +3,7 @@ package ru.itmo.homeworks.hw0708;
 public class Train extends Transport{
 
     private int wagonsCount;
+    private final String color = "blue";
 
     public Train(int wearLevel, int number, String color, int wagonsCount) {
         super(wearLevel, number, color);

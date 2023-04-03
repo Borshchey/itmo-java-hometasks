@@ -1,7 +1,6 @@
 package ru.itmo.homeworks.hw0708;
 
-public class Car extends Transport{
-
+public class Car extends Transport implements IChangeColor{
 
     public Car(int wearLevel, int number, String color) {
         super(wearLevel, number, color);

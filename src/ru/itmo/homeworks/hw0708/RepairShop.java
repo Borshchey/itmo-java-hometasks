@@ -1,6 +1,5 @@
 package ru.itmo.homeworks.hw0708;
 
-import java.awt.*;
 
 public class RepairShop {
 
@@ -25,10 +24,8 @@ public class RepairShop {
 
     public void repair(){
         for (Transport t: transports) {
-            if (t instanceof Bus || t instanceof Train) {
                 t.repair();
-            }
-            else {
+            if (t instanceof Car)  {
                 String random = randomColor();
                 t.setColor(random);
             }
