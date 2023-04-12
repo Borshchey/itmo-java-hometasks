@@ -1,0 +1,19 @@
+
+### Задание на исключения
+
+Объявить
+метод `static void throwException(Status status) throws JarException, FileNotFoundException, AccessDeniedException`,
+который принимает на вход `enum` и выбрасывает следующие исключения в зависимости от значения `status`:
+
+1. если status `FILE_NOT_FOUND`, выбрасывает `FileNotFoundException`
+2. если status `ACCESS_DENIED`, выбрасывает `AccessDeniedException`
+3. если status `JAR_ERROR`, выбрасывает `JarException`.
+
+При вызове метода `throwException` обработать исключения следующим образом:
+
+1. `FileNotFoundException` - выводить в консоль стек трейс,
+2. `AccessDeniedException`* - выводить в консоль сообщение исключения (метод getMessage()) и выбрасывать исключение
+   времени выполнения,
+3. `JarException` - выводить в консоль стек трейс.
+
+enum с необходимыми константами нужно создать.
