@@ -1,0 +1,38 @@
+
+### Задание 2
+
+      interface Eatable extends Serializable{}
+      interface Runnable {}
+
+      class Animal implements Runnable{}
+
+      class Cat extends Animal implements Eatable{}
+      class Kitten extends Cat{}
+
+      class Dog extends Animal implements Serializable{}
+
+
+      class Task {
+         public static  <T extends Cat & Eatable> void void01(T object){
+             // ВОПРОС: методы каких типов можно вызвать у object ???
+             // ОТВЕТ: Cat, Kitten, Eatable
+         }
+
+         public static  <T extends Animal & Serializable> void void02(T object){
+            // ВОПРОС: методы каких типов можно вызвать у object ???
+            // ОТВЕТ: все
+
+         }
+
+         public static  <T extends Serializable & Runnable> void void03(T object){
+            // ВОПРОС: методы каких типов можно вызвать у object ???
+            // ОТВЕТ: Serializable, Eatable, Runnable
+
+         }
+
+         public static void main(String[] args) {
+            Task.<Cat>void01(Cat, Kitten);
+            Task.<Animal>void02(Cat, Kitten, Dog, Animal);
+            Task.<Dog>void03(Object);
+         }
+}
