@@ -1,5 +1,6 @@
 package ru.itmo.homeworks.hw14.task02;
 
+import java.sql.Array;
 import java.util.*;
 
 public class Task02 {
@@ -22,6 +23,21 @@ public class Task02 {
     public static void countEachCode(List<Message> messageList) {
         // TODO: Подсчитать количество сообщений для каждого кода сообщения
         //  Ответ в консоль
+
+        // Подсчитать количество сообщений для каждого кода сообщения (Ответ в консоль)
+        // FIXME:
+        //  1. Объявить массив, в котором можно хранить количество повторений. Размер массива равен 10
+        //  2. Перебрать список messageList и на каждой итерации цикла:
+        //     2.1. получить значение свойства code элемента коллекции (вызовом метода метод getCode у элемента коллекции)
+        //     2.2. по полученному в п.2.1 коду получить значение элемента массива, объявленного в п.1, и увеличить его значение на 1
+        //   3. Массив, объявленный в п.1, вывести в консоль
+
+        int[] array = new int[10];
+        for (Message message : messageList) {
+            int i = message.getCode();
+            array[i]++;
+        }
+        System.out.println(Arrays.toString(array));
     }
 
 
