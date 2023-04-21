@@ -193,7 +193,7 @@ public class Task02 {
         ArrayList<Map.Entry<String, Integer>> list02 = new ArrayList<>();
 
         //   7. Объявить объект класса ValuesComparator
-        ValuesComparator <Map.Entry<String, Integer>> comparator01 = new ValuesComparator();
+        Comparator <Map.Entry<String, Integer>> comparator01 = new ValuesComparator();
 
         //   8. Вызвать метод sort() списка из п.4, передать в него компаратор из п.7
         Collections.sort(list02, comparator01);
@@ -212,7 +212,7 @@ public class Task02 {
     //     2.3. вернуть из метода 0, если числа равны,
     //     вернуть из метода отрицательное число, если значение value объекта o1 больше значения value объекта o2,
     //     вернуть из метода положительное число, если значение value объекта o1 меньше значения value объекта o2
-    class ValuesComparator implements Comparator<Map.Entry<String, Integer>>{
+    static class ValuesComparator implements Comparator<Map.Entry<String, Integer>>{
         @Override
         public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2){
             return (o2.getValue() - o1.getValue());
