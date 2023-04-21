@@ -184,16 +184,13 @@ public class Task02 {
         List<String> list = Arrays. asList(arr);
 
         //  3. Объявить переменную типа Map<String, Integer>, где - ключи (String) - слово, значения (Integer) - частота встречаемости,
-        Map<String, Integer> map = new TreeMap<String, Integer>();
-
         //  вызвать метод task02, передать в него список из п.2, значение которое вернет метод присвоить объявленной переменой
         //  (так мы получим слова и частоту повторений)
-        task02(list);
+        Map<String, Integer> map = task02(list);
 
         //  4. Создать список (ArrayList<Map.Entry<String, Integer>>) из пар мапы, объявленной в п.3
         //  (для получения коллекции пар использовать метод map.entrySet())
         ArrayList<Map.Entry<String, Integer>> list02 = new ArrayList<>();
-
 
         //   7. Объявить объект класса ValuesComparator
         ValuesComparator <Map.Entry<String, Integer>> comparator01 = new ValuesComparator();
