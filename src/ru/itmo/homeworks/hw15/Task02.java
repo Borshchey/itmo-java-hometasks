@@ -48,11 +48,11 @@ public class Task02 {
         String[] arr = text.split(" ");
         for (String s : arr) {
             int lenght = s.length();
-            if (map.containsKey(s)) {
-                map.put(s, map.getOrDefault(s, ) + 1);
-            } else {
-                map.put(s, map.getOrDefault(s, 1L));
-            }
+//            if (map.containsKey(s)) {
+//                map.put(s, map.getOrDefault(s,) + 1);
+//            } else {
+//                map.put(s, map.getOrDefault(s, ));
+//            }
         }
 
         //      3.3. если ключ содержится (значит информация о строке из массива уже есть в мапе),
@@ -190,18 +190,20 @@ public class Task02 {
 
         //  4. Создать список (ArrayList<Map.Entry<String, Integer>>) из пар мапы, объявленной в п.3
         //  (для получения коллекции пар использовать метод map.entrySet())
-        ArrayList<Map.Entry<String, Integer>> list02 = new ArrayList<>();
+        ArrayList<Map.Entry<String, Integer>> list02 = new ArrayList<>(map.entrySet());
 
         //   7. Объявить объект класса ValuesComparator
-        Comparator <Map.Entry<String, Integer>> comparator01 = new ValuesComparator();
+        //Comparator <Map.Entry<String, Integer>> comparator01 = new ValuesComparator();
 
         //   8. Вызвать метод sort() списка из п.4, передать в него компаратор из п.7
-        Collections.sort(list02, comparator01);
-
+        list02.sort(new ValuesComparator());
         //   9. Написать цикл на 10 итераций (или по количеству элементов списка (если их меньше 10)).
         //   Цикл должен перебирать список п.4, на каждой итерации выводить в консоль значение свойства key (метод getKey) элемента списка
-        for (Map.Entry<String, Integer> stringIntegerEntry : list02) {
-            System.out.println(stringIntegerEntry.getKey());
+
+        int count = Math.min(10, list02.size());
+
+        for (int i = 0; i < count; i++) {
+            System.out.println(list02.get(i).getKey() + " = " + list02.get(i).getKey());
         }
     }
 
