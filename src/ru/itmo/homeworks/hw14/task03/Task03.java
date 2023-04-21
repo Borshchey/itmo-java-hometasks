@@ -14,7 +14,7 @@ public class Task03 {
         Comparator<Employee> comparator03 = new NameComparator()
                 .thenComparing(new SalaryComparator())
                 .thenComparing(new AgeComparator())
-                .thenComparing(new CompanyComparator();)
+                .thenComparing(new CompanyComparator());
 
         // 2. Отсортировать employeeList:
         // 2.1. по имени
